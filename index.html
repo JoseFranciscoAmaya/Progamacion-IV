@@ -4,56 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BIENVENIDOS AL FORMULARIO DE ALUMNOS</title>
+    <title>Bienvenido a Programacion IV</title>
     <link rel="stylesheet" href="estilos.css">
-    
-</head>
+</head> 
+
 <body>
-    <h1>Formulario de prueba de ALUMNOS</h1>
-    <form name="frmAlumno"id="frmAlumno" method="get">
-    <h1color="#993366" size="10" face="Comic Sans MS, Arial, MS Sans Serif">Registro de ALUMNOS/>></h1color="#993366"> color="#993366" size="10" face="Comic Sans MS, Arial, MS Sans Serif">Registro de ALUMNOS</>
-    <div class="cuadro">
-        <form  method="post">
-            <img src="imagenes\usuario.png" width="200" height="200">
-        <br><br>
-        Subir Foto: <input required type="file" name="foto" id="foto"><br><br>
-        Color preferido: <input type="color"><br><br>
-
-        <input pattern="{5,15}" required type="text" placeholder="Código">
-        <br> <br>
-        <input type="text" pattern="[a-z A-Z ñ Ñ]{3,65}" required zize="20"placeholder="Carrera">
-        <br> <br>
-        <input type="text" pattern="[a-z A-Z ñ Ñ]{3,65}" required zize="20"placeholder="Nombres">
-        <br> <br>
-        <input type="text" pattern="[a-z A-Z ñ Ñ]{3,65}" required zize="20"placeholder="Apellidos">
-        <br> <br>
-        Status:
-        <label for="soltero">soltero</label><input type="radio" name="cboStatus"id="soltero">
-        <label for="acompañado">acompañado</label><input type="radio" name="cboStatus"id="acompañado">
-        <label for="divorciado">divorciado</label><input type="radio" name="cboStatus"id="divorciado">
-        <label for="viudo">viudo</label><input type="radio" name="cboStatus"id="viudo">
-        <label for="Casado">Casado</label><input type="radio" name="cboStatus"id="Casado"><br><br>
-
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Edad">
-        Fecha Nacimiento: <input type="date" required><br><br>
-        <br><br>
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Dirección">
-        <br><br>
-        <input pattern="[0-9]{6,18}" required type="text" placeholder="Teléfono">
-        <br> <br>
-        <input pattern="[\w]{10,65}" required type="text" placeholder="Email">
-        <br> <br>
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Responsable">
-        <br><br>
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Teléfono del Responsable">
-        <br><br>
-        <input type="submit" value="Registrar">
-        <input type="submit" value="Guardar">
-
+    <h1>APP ALUMNOS OFFLINE</h1>
+    <form name="frmAlumnos" id="frmAlumnos" method="get">
+        <div class="container">
+            <div class="fila">
+                <input type="text" id="txtCodigoAlumno" 
+                    required="required" placeholder="codigo" pattern="^[A-Z]{4}[0-9]{6}">
+            </div>
+            <div class="fila">
+                <input type="text" id="txtNombreAlumno" required="required" 
+                    placeholder="Nombre" pattern="[a-zA-ZñÑ ]{3,65}">
+            </div>
+            <div class="fila">
+                <input type="text" id="txtDireccionAlumno" required="required" placeholder="Direccion" >
+            </div>
+            <div class="fila">
+                <input type="text" id="txtTelefonoAlumno" required="required" 
+                    placeholder="Telefono" pattern="[0-9]{4}-[0-9]{4}"><br>
+            </div>
+            <div class="fila">
+                <input type="button" value="Guardar" onclick="salvarForm()"><br>
+                <input type="button" value="Buscar" onclick="buscarForm()"><br>
+                <input type="button" value="Eliminar" onclick="deleteForm()">
+                <!--<input type="submit" value="Guardar">
+                <input type="button" id="btnRecuperarAlumno" value="Recuperar">-->
+            </div>
+        </div>
     </form>
-    </div>
-    
+    <script src="app.js"></script>
 </body>
 </html>
-    
   
