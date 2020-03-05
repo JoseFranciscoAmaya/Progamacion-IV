@@ -1,59 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BIENVENIDOS AL FORMULARIO DE ALUMNOS</title>
-    <link rel="stylesheet" href="estilos.css">
-    
-</head>
-<body>
-    <h1>Formulario de prueba de ALUMNOS</h1>
-    <form name="frmAlumno"id="frmAlumno" method="get">
-    <h1color="#993366" size="10" face="Comic Sans MS, Arial, MS Sans Serif">Registro de ALUMNOS/>></h1color="#993366"> color="#993366" size="10" face="Comic Sans MS, Arial, MS Sans Serif">Registro de ALUMNOS</>
-    <div class="cuadro">
-        <form  method="post">
-            <img src="imagenes\usuario.png" width="200" height="200">
-        <br><br>
-        Subir Foto: <input required type="file" name="foto" id="foto"><br><br>
-        Color preferido: <input type="color"><br><br>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title>Bienvenido a Programacion IV</title>
+	    <link rel="stylesheet" href="estilos.css">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	</head> 
+	<body>
+	    <div class="container">
+	        <form id="frmConversores" >
+	            <div class="row row-cols-2 p-2">
+	                <div class="col text-center bg-info text-white">
+	                    APP CONVERSORES
+	                </div>
+	            </div>
+	            <div class="row row-cols-4 p-2">
+	                <div class="col">
+	                    DE: <select id="cboDe" class="form-control">
+	                        <option value="dolar">Dolar</option>
+	                        <option value="euro">Euros</option>
+	                        <option value="quetzal">Quetzales</option>
+	                        <option value="lempira">Lempira</option>
+	                        <option value="cordoba">Cordoba</option>
+	                    </select>
+	                </div>
+	                <div class="col">
+	                    A: <select id="cboA" class="form-control">
+	                        <option value="dolar">Dolar</option>
+	                        <option value="euro">Euros</option>
+	                        <option value="quetzal">Quetzales</option>
+	                        <option value="lempira">Lempira</option>
+	                        <option value="cordoba">Cordoba</option>
+	                    </select>
+	                </div>
+	            </div>
+	            <div class="row row-cols-4 p-2">
+	                <div class="col text-center">
+	                    <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="cantidad" id="txtCantidadConversores" class="form-control">
+	                </div>
+	                <div class="col text-center">
+	                    <p class="bg-success text-white" id="lblRespuesta">Respuesta: ?</p>
+	                </div>
+	            </div>
+	            <div class="row row-cols-2">
+	                <div class="col text-center"><input type="submit" id="btnConvertirMoneda" class="btn btn-primary"></div>
+	            </div>
+	        </form>
+	    </div>
+	    <script src="app.js"></script>
+	</body>
+	</html>
 
-        <input pattern="{5,15}" required type="text" placeholder="Código">
-        <br> <br>
-        <input type="text" pattern="[a-z A-Z ñ Ñ]{3,65}" required zize="20"placeholder="Carrera">
-        <br> <br>
-        <input type="text" pattern="[a-z A-Z ñ Ñ]{3,65}" required zize="20"placeholder="Nombres">
-        <br> <br>
-        <input type="text" pattern="[a-z A-Z ñ Ñ]{3,65}" required zize="20"placeholder="Apellidos">
-        <br> <br>
-        Status:
-        <label for="soltero">soltero</label><input type="radio" name="cboStatus"id="soltero">
-        <label for="acompañado">acompañado</label><input type="radio" name="cboStatus"id="acompañado">
-        <label for="divorciado">divorciado</label><input type="radio" name="cboStatus"id="divorciado">
-        <label for="viudo">viudo</label><input type="radio" name="cboStatus"id="viudo">
-        <label for="Casado">Casado</label><input type="radio" name="cboStatus"id="Casado"><br><br>
-
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Edad">
-        Fecha Nacimiento: <input type="date" required><br><br>
-        <br><br>
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Dirección">
-        <br><br>
-        <input pattern="[0-9]{6,18}" required type="text" placeholder="Teléfono">
-        <br> <br>
-        <input pattern="[\w]{10,65}" required type="text" placeholder="Email">
-        <br> <br>
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Responsable">
-        <br><br>
-        <input pattern="[a-z A-Z ñ Ñ]{3,65}" required type="text" placeholder="Teléfono del Responsable">
-        <br><br>
-        <input type="submit" value="Registrar">
-        <input type="submit" value="Guardar">
-
-    </form>
-    </div>
-    
-</body>
-</html>
-    
   
