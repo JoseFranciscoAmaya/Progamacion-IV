@@ -1,68 +1,29 @@
-"docentes.html"
+export function modulo(){
+    var $ = el => document.querySelector(el),
+        frmDocentes = $("#frm-docentes");
+    frmDocentes.addEventListener("submit",e=>{
+        e.preventDefault();
+        e.stopPropagation();
+        
+        let docentes = {
+            accion    : frmDocentes.dataset.accion,
+            idDocente  : frmDocentes.dataset.iddocente,
+            codigo    : $("#txtCodigoDocente").value,
+            nombre    : $("#txtNombreDocente").value,
+            dui       : $("#txtDuiDocente").value,
+            telefono  : $("#txtTelefonoDocente").value
+        };
+        fetch(`private/modulos/docentes/procesosDOC.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
+            $("#respuestaDocente").innerHTML = `
+                <div class="alert alert-success" role="alert">
+                    ${resp.msg}
+                </div>
+            `;
+        });
+    });
+    frmDocentes.addEventListener("reset",e=>{
+        $("#frm-docente").dataset.accion = 'nuevo';
+        $("#frm-docente").dataset.iddocente = '';
+    });
+}
 
-<form method="post" id="frmDocentes">
-    <div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
-        <div class="card-header">
-            MANTENIMIENTO DE DOCENTES
-
-            <button type="button" class="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="card-body">
-            <div class="row row-cols-1 p-2">
-                <div class="row-col">
-                    <div class="col">
-                        CODIGO:
-                    </div>
-                    <div class="col">
-                        <input type="text" required id="txtCodigoDocente" placeholder="XXXX000000" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col">
-                    <div class="col">
-                        NOMBRE:
-                    </div>
-                    <div class="col">
-                        <input type="text" required id="txtNombreDocente" placeholder="AAA AAAA" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col">
-                    <div class="col">
-                        DIRECCION:
-                    </div>
-                    <div class="col">
-                        <input type="text" required id="txtDireccionDocente" placeholder="XXXX000000" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row row-cols-1">
-                <div class="row-col">
-                    <div class="col">
-                        TELEFONO:
-                    </div>
-                    <div class="col">
-                        <input type="text" required id="txtTelefonoDocente" placeholder="0000-0000" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col text-center">
-                    <div class="col">
-                        <input id="btnGuardarDocente" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
-                        <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
-                    </div>
-                </div>
-            </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col text-center">
-                    <div class="col" id="respuestaDocente"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
